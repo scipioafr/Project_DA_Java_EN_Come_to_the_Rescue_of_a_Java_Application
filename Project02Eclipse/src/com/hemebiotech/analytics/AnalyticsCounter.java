@@ -10,6 +10,14 @@ public class AnalyticsCounter {
 	private static int pupilCount = 0;		// initialize to 0
 	
 	public static void main(String args[]) throws Exception {
+
+		//Première étape:on déclare une hashmap (de type (string,integer))
+		//On lit le fichier symptoms.txt(voir bufferedreader)
+		//On parcourt le fichier symptoms.txt en comptant les symptomes dans la map(voir la boucle while et les conditions)
+		//on range dans l'ordre alphabétique les symptomes utiliser la méthode Collections.sort
+		//On écrit dans le fichier result.out
+
+
         String []disease;
         disease= new String[101];
 
