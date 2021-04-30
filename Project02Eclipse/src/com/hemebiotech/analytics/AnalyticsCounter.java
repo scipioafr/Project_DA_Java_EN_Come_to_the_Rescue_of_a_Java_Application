@@ -10,15 +10,20 @@ public class AnalyticsCounter {
 	private static int pupilCount = 0;		// initialize to 0
 	
 	public static void main(String args[]) throws Exception {
-		// first get input
+        String []disease;
+        disease= new String[101];
+
+	    // first get input
 		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
 		String line = reader.readLine();
 
+
 		int i = 0;	// set i to 0
 		int headCount = 0;	// counts headaches
+        disease[i]=line;
 		while (line != null) {
 			i++;	// increment i
-			System.out.println("symptom from file: " + line);
+			/*System.out.println("symptom from file: " + line);
 			if (line.equals("headache")) {
 				headCount++;
 				System.out.println("number of headaches: " + headCount);
@@ -29,9 +34,25 @@ public class AnalyticsCounter {
 			else if (line.contains("pupils")) {
 				pupilCount++;
 			}
+			System.out.println("i:"+i);*/
 
 			line = reader.readLine();	// get another symptom
+            disease[i]=line;
 		}
+		i=0;
+		for(int j=0;j<=98;j++) {
+		    for(int k=(j+1);k<=99;k++){
+		        if(disease[j].equals(disease[k])){
+                    i++;
+                    disease[k] = ("rien");
+                }
+            }
+		    if(i==0){i++;}
+		    if(disease[j].equals("rien")){
+
+            }else{System.out.println(disease[j]+":"+i);}
+		    i=0;
+        }
 		
 		// next generate output
 		FileWriter writer = new FileWriter ("result.out");
